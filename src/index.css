@@ -1,12 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: none repeat scroll 0 0 #f4f4f4;
+  border: 0 none;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #555555;
+  overflow-x: hidden;
 }
 
 code {
@@ -17,13 +20,51 @@ code {
 .containerbody{
   width: 100%;
   height: 800px;
-  border: solid 1px;
 }
 .navbar{
-  background: #fcffde;
+  background: #406182;
+  border: 1px solid #2f4760;
+}
+.navbar-brand-left{
+  display: flex;
+  flex-direction: column;
+}
+.navbar-brand-top{
+  display: flex;
+  flex-direction: row;
+}
+.navbar-icon{
+  margin-left: 0px;
+  width: 170px;
+  height: auto;
+}
+.navbar-login{
+  float: right;
+}
+.navbar2{
+  background: #2d323d;
+  border-top: none;
+  width: 230px;
+}
+.option-left{
+  border-bottom: 1px solid #22262e;;
+  width: 228px;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+}
+.option-left-active{
+  border-bottom: 1px solid #22262e;;
+  width: 228px;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  background :  #3c4352 !important;
+  line-height: 50px;
 }
 .ompanel{
   display: flex;
   flex-direction: row;
-  background: #e5dee3;
+  background: #fff;
 }

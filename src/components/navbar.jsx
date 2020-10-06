@@ -1,16 +1,18 @@
 import React from "react";
+import Logo from "../components/cloudspacelogo.jpg"
 
 // Stateless Functional Component
 
 const NavBar = ({ totalCounters }) => {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        {/*<i className="fa fa-shopping-cart fa-lg m-2" aria-hidden="true" />*/}
-        {/*<span className="badge badge-pill badge-info m-2" style={{ width: 50 }}>*/}
-          {/*{totalCounters}*/}
-        {/*</span>*/}
-        Items
+      <div className="navbar-brand-top">
+          <div className="navbar-icons">
+              <img className={"navbar-icon"} src={Logo}/>
+          </div>
+          <div className="navbar-gap"></div>
+          <div className="navbar-login"></div>
+
       </div>
     </nav>
   );

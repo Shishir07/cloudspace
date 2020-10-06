@@ -4,6 +4,7 @@ import {BrowserRouter as Router,
     Route,
     Link} from 'react-router-dom';
 import NavBar from "./components/navbar";
+import NavBar2 from "./components/navbar2"
 import Counters from "./components/counters";
 
 function App( props) {
@@ -55,16 +56,16 @@ function App( props) {
         totalCounters={state.counters.filter(c => c.value > 0).length}
       />
       <div className="ompanel">
-        <NavBar/>
+        <NavBar2/>
         <div className="containerbody">
-          <Counters
-              counters={state.counters}
-              onReset={handleReset}
-              onIncrement={handleIncrement}
-              onDecrement={handleDecrement}
-              onDelete={handleDelete}
-              onRestart={handleRestart}
-          />
+          {/*<Counters*/}
+              {/*counters={state.counters}*/}
+              {/*onReset={handleReset}*/}
+              {/*onIncrement={handleIncrement}*/}
+              {/*onDecrement={handleDecrement}*/}
+              {/*onDelete={handleDelete}*/}
+              {/*onRestart={handleRestart}*/}
+          {/*/>*/}
         </div>
       </div>
 
