@@ -1,5 +1,6 @@
 import React from "react";
 import {Formik, Form, Field, ErrorMessage, useField} from 'formik';
+import userService from '../service/Service';
 // Stateless Functional Component
 
 
@@ -31,6 +32,16 @@ const MyTextInput = ({label, ...props}) => {
 
     );
 };
+const attemptLogin = (values) => {
+    userService.login(values.username,values.password)
+            .then((data) => {
+                //setUser(data)
+                localStorage.setItem('cloudspace-auth-token',data.access_token);
+            })
+            .catch(e => {
+                console.log(console.log("error", e));
+            });
+}
 
 const Login = (props) => {
     return (
@@ -38,7 +49,8 @@ const Login = (props) => {
             <div className="login">
                 <Formik
                     initialValues={{
-                        coupon: ''
+                        username: '',
+                        password: ''
                     }}
                     //validate = {validateCouponForm}
                     enableReinitialize={true}
@@ -46,7 +58,7 @@ const Login = (props) => {
                     isSubmitting={true}
                     onSubmit={(values, {setSubmitting}) => {
                         setTimeout(() => {
-                            //handleCouponSubmit(values.coupon.toUpperCase());
+                            attemptLogin(values);
                             setSubmitting(false);
                         }, 200);
                     }}
@@ -68,13 +80,7 @@ const Login = (props) => {
                             placeholder="Your Password"
                             className = "form-input"
                         />
-                        <button type="submit" className={"apply-coupon"}>Login</button>
-                        <div className="container">
-                            <button type="button" onClick="document.getElementById('id01').style.display='none'"
-                                    className="cancelbtn">Cancel
-                            </button>
-                            <span className="psw">Forgot <a href="#">password?</a></span>
-                        </div>
+                        <button type="submit" className={"login-button"}>Login</button>
                     </Form>
                 </Formik>
             </div>

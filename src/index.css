@@ -90,7 +90,7 @@ code {
   position: relative;
 }
 
-button {
+.login-button {
   background-color: #4CAF50;
   color: white;
   padding: 5px 20px;
