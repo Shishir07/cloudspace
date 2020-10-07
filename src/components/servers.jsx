@@ -8,8 +8,8 @@ import Card from './card';
 
 const Servers = (props) => {
 
-    const [servers, setServers] = useState([{"name": "instance-1", "country": "IN"},{"name": "instance-1", "country": "IN"}]);
-    /*useEffect(() => {
+    const [servers, setServers] = useState([]);
+    useEffect(() => {
         userService.getServers()
                 .then((data) => {
                     setServers(data);
@@ -17,7 +17,7 @@ const Servers = (props) => {
                 .catch(e => {
                     console.log(console.log("error", e));
                 });
-    })*/
+    })
     let cardList = servers.map((server) => <Card serverDetails={server}/>);
     return (
             <div className="ompanel">

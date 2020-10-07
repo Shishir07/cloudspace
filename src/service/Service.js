@@ -24,8 +24,7 @@ export default {
     },
     getServers : () => {
         return request({
-            //TODO
-                           url: "/login",
+                           url: "/computeEngine/instances",
                            method: 'GET'
                        });
     }

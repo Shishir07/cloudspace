@@ -8,8 +8,8 @@ const Card = ({serverDetails}) => {
     return (
             <div className="card">
                 <div className="container-new">
-                    <h4><b>{serverDetails.name}</b></h4>
-                    <p>{serverDetails.country}</p>
+                    <h4><b>{serverDetails.instanceName}</b></h4>
+                    <p>{serverDetails.userId}</p>
                 </div>
             </div>
     );
