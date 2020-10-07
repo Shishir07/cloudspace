@@ -34,19 +34,21 @@ const MyTextInput = ({label, ...props}) => {
 
     );
 };
-const attemptLogin = (values) => {
-    userService.login(values.username,values.password)
-            .then((data) => {
-                //setUser(data)
-                localStorage.setItem('cloudspace-auth-token',data.access_token);
-            })
-            .catch(e => {
-                console.log(console.log("error", e));
-            });
-}
+
 
 const Login = (props) => {
 
+    const attemptLogin = (values) => {
+        userService.login(values.username,values.password)
+                .then((data) => {
+                    //setUser(data)
+                    localStorage.setItem('cloudspace-auth-token',data.access_token);
+                    setAuthenticated(true);
+                })
+                .catch(e => {
+                    console.log(console.log("error", e));
+                });
+    }
     let url = "/home";
 
     const [isAuthenticated, setAuthenticated] = useState(false);

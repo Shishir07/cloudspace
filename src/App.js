@@ -6,6 +6,7 @@ import {BrowserRouter as Router,
 import NavBar from "./components/navbar";
 import Home from "./components/home";
 import Login from "./components/login"
+import Servers from "./components/servers"
 import {StateProvider, store} from "./store"
 
 function App( props) {
@@ -69,6 +70,10 @@ function App( props) {
             <Route exact
                    path="/"
                    render={(props) => <Login {...props} />}
+            />
+            <Route exact
+                   path="/servers"
+                   render={(props) => <Servers {...props} />}
             />
           </Switch>
 

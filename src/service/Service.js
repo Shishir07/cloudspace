@@ -21,6 +21,13 @@ export default {
                            method: 'POST',
                            body: JSON.stringify({ username: username,password: password })
                        });
+    },
+    getServers : () => {
+        return request({
+            //TODO
+                           url: "/login",
+                           method: 'GET'
+                       });
     }
 
 
@@ -32,8 +39,8 @@ const request = (options) => {
                                     'Content-Type': 'application/json',
                                 })
 
-    if(localStorage.getItem('qwackly-auth-token')) {
-        headers.append('Authorization', 'Bearer ' + localStorage.getItem('qwackly-auth-token'))
+    if(localStorage.getItem('cloudspace-auth-token')) {
+        headers.append('Authorization', 'Bearer ' + localStorage.getItem('cloudspace-auth-token'))
     }
 
     const defaults = {headers: headers};
