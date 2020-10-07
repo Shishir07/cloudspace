@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState, useEffect, useContext} from 'react';
+import {Redirect} from "react-router-dom";
 import {Formik, Form, Field, ErrorMessage, useField} from 'formik';
 import userService from '../service/Service';
 // Stateless Functional Component
+
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -44,6 +46,22 @@ const attemptLogin = (values) => {
 }
 
 const Login = (props) => {
+
+    let url = "/home";
+
+    const [isAuthenticated, setAuthenticated] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem('cloudspace-auth-token') ) {
+            setAuthenticated(true);
+        }
+    })
+
+
+    if (isAuthenticated) {
+        return <Redirect to= {url} />
+    }
+
     return (
         <div className="ompanel">
             <div className="login">

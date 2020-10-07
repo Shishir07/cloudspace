@@ -107,14 +107,15 @@ code {
 }
 
 .form-input {
-  color: white;
+  color: black;
   padding: 5px 100px;
   margin:8px 0;
   width: 100%;
   position: relative;
+  text-align: center;
 }
 
-login-button {
+.login-button {
   background-color: #4CAF50;
   color: white;
   padding: 5px 20px;

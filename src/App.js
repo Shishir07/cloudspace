@@ -63,11 +63,11 @@ function App( props) {
         <Router>
           <Switch>
             <Route exact
-                   path="/"
+                   path="/home"
                    render={(props) => <Home {...props} />}
             />
             <Route exact
-                   path="/login"
+                   path="/"
                    render={(props) => <Login {...props} />}
             />
           </Switch>

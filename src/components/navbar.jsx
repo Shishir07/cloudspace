@@ -7,7 +7,7 @@ import DropDown from '../components/DropDown'
 
 const NavBar = (props) => {
 
-    const [isAuthenticated, setAuthenticated] = useState(true);
+    const [isAuthenticated, setAuthenticated] = useState(false);
 
     const [showDropDown, setDropDown] = useState(false);
 
@@ -19,6 +19,16 @@ const NavBar = (props) => {
         setDropDown(false)
     };
 
+    let firstName = currentUser.firstName;
+
+    useEffect(() => {
+        if (localStorage.getItem('cloudspace-auth-token') ) {
+            setAuthenticated(true);
+        }
+    })
+
+
+
     return (
         <div className="navbar-top">
               <div className="navbar-icons">
@@ -28,7 +38,7 @@ const NavBar = (props) => {
               <div className="navbar-right">
                   {(isAuthenticated)
                       ?(  <React.Fragment>
-                          <div className={"navbar-login"}>Hello Shishir!</div>
+                          <div className={"navbar-login"}>Hello {firstName}!</div>
                           <div className={"navbar-login"} onClick={handleLogout}>Logout</div>
                       </React.Fragment>)
                       :null }
