@@ -14,32 +14,56 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }
 
 .containerbody{
   width: 100%;
   height: 800px;
 }
-.navbar{
+.navbar-top{
   background: #406182;
   border: 1px solid #2f4760;
+  position: sticky;
+  width: 100%;
+  height : 50px;
+  top:0;
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .navbar-brand-left{
   display: flex;
   flex-direction: column;
 }
-.navbar-brand-top{
-  display: flex;
-  flex-direction: row;
+.navbar-icons{
+  flex: 3;
+  float: left;
 }
 .navbar-icon{
   margin-left: 0px;
   width: 170px;
-  height: auto;
+}
+.navbar-gap{
+  flex: 6;
+}
+.navbar-right{
+  flex: 2;
+  float: right;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
 }
 .navbar-login{
-  float: right;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
+  border-left: #3c4352;
+  margin-left: 50px;
+  width: 130px;
+  background: #2f4760;
+  line-height: 40px;
 }
 .navbar2{
   background: #2d323d;
@@ -55,7 +79,7 @@ code {
   line-height: 50px;
 }
 .option-left-active{
-  border-bottom: 1px solid #22262e;;
+  border-bottom: 1px solid #22262e;
   width: 228px;
   height: 50px;
   color: #FFFFFF;
@@ -90,7 +114,7 @@ code {
   position: relative;
 }
 
-.login-button {
+login-button {
   background-color: #4CAF50;
   color: white;
   padding: 5px 20px;
@@ -114,4 +138,28 @@ button:hover {
 span.psw {
   float: right;
   padding-top: 16px;
+}
+.dropdown{
+  position: absolute;
+  list-style-type: none;
+  color: #22262e;
+  display: block;
+  width: 178px;
+  height: auto;
+  z-index: 100;
+  background: #FFFFFF;
+  transition: height 3s;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  padding-left: 33px;
+  padding-top: 15px;
+  top: 45px;
+}
+.angle-up{
+  transform: rotate(0deg);
+  transition: transform 200ms ease-in-out;
+
+}
+.angle-down{
+  transform: rotate(180deg);
+  transition: transform 200ms ease-in-out;
 }

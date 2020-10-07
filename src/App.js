@@ -6,8 +6,12 @@ import {BrowserRouter as Router,
 import NavBar from "./components/navbar";
 import Home from "./components/home";
 import Login from "./components/login"
+import {StateProvider, store} from "./store"
 
 function App( props) {
+
+  const {dispatch} = useContext(store);
+
   const [state, changeState] = useState({
     counters: [
       { id: 1, value: 0 },
@@ -55,21 +59,21 @@ function App( props) {
       <NavBar
         totalCounters={state.counters.filter(c => c.value > 0).length}
       />
-      <Router>
-        <Switch>
-          <Route exact
-                 path="/"
-                 render={(props) => <Home {...props} />}
-          />
-          <Route exact
-                 path="/login"
-                 render={(props) => <Login {...props} />}
-          />
-        </Switch>
+      <StateProvider>
+        <Router>
+          <Switch>
+            <Route exact
+                   path="/"
+                   render={(props) => <Home {...props} />}
+            />
+            <Route exact
+                   path="/login"
+                   render={(props) => <Login {...props} />}
+            />
+          </Switch>
 
-      </Router>
-
-
+        </Router>
+      </StateProvider>
     </div>
   );
 }
