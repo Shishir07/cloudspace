@@ -49,7 +49,7 @@ const Login = (props) => {
                     console.log(console.log("error", e));
                 });
     }
-    let url = "/home";
+    let url = "/servers";
 
     const [isAuthenticated, setAuthenticated] = useState(false);
 
