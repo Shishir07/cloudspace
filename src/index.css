@@ -68,3 +68,50 @@ code {
   flex-direction: row;
   background: #fff;
 }
+
+.login {
+  display: block;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+  border: 1px solid #000;
+}
+
+.container {
+  padding: 16px;
+}
+
+.form-input {
+  color: white;
+  padding: 5px 100px;
+  margin:8px 0;
+  width: 100%;
+  position: relative;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 10px;
+  margin-left: 0px;
+  background-color: #f44336;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
