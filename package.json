@@ -37,5 +37,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:4321"
+  "proxy": "http://172.23.131.83:4321"
 }
