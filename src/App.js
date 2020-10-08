@@ -5,9 +5,14 @@ import {BrowserRouter as Router,
     Link} from 'react-router-dom';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
-import Login from "./components/login"
-import Servers from "./components/servers"
+import Login from "./components/login";
+import Servers from "./components/servers";
+import AddOnstorages from "./components/addonstorage";
+import Backups from "./components/backups";
+import Cdns from "./components/cdn";
+import Databases from "./components/databases";
 import {StateProvider, store} from "./store"
+import AddOnStorage from "./components/addonstorage";
 
 function App( props) {
 
@@ -74,6 +79,22 @@ function App( props) {
             <Route exact
                    path="/servers"
                    render={(props) => <Servers {...props} />}
+            />
+            <Route exact
+                   path="/addonstorages"
+                   render={(props) => <AddOnStorage {...props} />}
+            />
+            <Route exact
+                   path="/backups"
+                   render={(props) => <Backups {...props} />}
+            />
+            <Route exact
+                   path="/cdns"
+                   render={(props) => <Cdns {...props} />}
+            />
+            <Route exact
+                   path="/databases"
+                   render={(props) => <Databases {...props} />}
             />
           </Switch>
 
