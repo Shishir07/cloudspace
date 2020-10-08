@@ -3,12 +3,12 @@ import {Redirect} from "react-router-dom";
 import userService from '../service/Service';
 import NavBar2 from "./navbar2";
 import '../global.css'
-import Card from './card';
+import Card from './dbcard';
 
 
 const Databases = (props) => {
 
-    const [databases, setDatabases] = useState([]);
+    const [databases, setDatabases] = useState([{"instanceName":"db-1","type":"Postgressql"},{"instanceName":"db-2","type":"MySql"},{"instanceName":"db-1","type":"Riak"}]);
 
     const [url, setUrl] =  useState("/");
 
@@ -19,15 +19,7 @@ const Databases = (props) => {
         setRedirect(true);
     }
 
-    useEffect(() => {
-        userService.getServers()
-                .then((data) => {
-                    setDatabases(data);
-                })
-                .catch(e => {
-                    console.log(console.log("error", e));
-                });
-    })
+
 
     let cardList = databases.map((database) => <Card serverDetails={database}/>);
 
