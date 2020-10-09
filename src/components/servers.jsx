@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import {Redirect} from "react-router-dom";
 import userService from '../service/Service';
 import NavBar2 from "./navbar2";
+import NavBar from "./navbar";
 import '../global.css'
 import Card from './card';
 
@@ -27,7 +28,7 @@ const Servers = (props) => {
                 .catch(e => {
                     console.log(console.log("error", e));
                 });
-    })
+    },[])
 
     let cardList = servers.map((server) => <Card serverDetails={server}/>);
 
@@ -36,12 +37,17 @@ const Servers = (props) => {
     }
 
     return (
+        <div>
+            <NavBar
+            />
             <div className="ompanel">
                 <NavBar2 active={"servers"} handleNavigation={(variable) => redirectHandler(variable)}/>
                 <div className="containerbody">
                     <ul className={'list'}> {cardList}</ul>
                 </div>
             </div>
+        </div>
+
     );
 };
 

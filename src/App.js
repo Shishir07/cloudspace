@@ -3,11 +3,12 @@ import {BrowserRouter as Router,
     Switch,
     Route,
     Link} from 'react-router-dom';
-import NavBar from "./components/navbar";
+
 import Home from "./components/home";
 import Login from "./components/login";
 import Servers from "./components/servers";
 import AddOnstorages from "./components/addonstorage";
+import ServerDetails from "./components/ServerDetails";
 import Backups from "./components/backups";
 import Cdns from "./components/cdn";
 import Databases from "./components/databases";
@@ -62,9 +63,6 @@ function App( props) {
 
   return (
     <div>
-      <NavBar
-        totalCounters={state.counters.filter(c => c.value > 0).length}
-      />
       <StateProvider>
         <Router>
           <Switch>
@@ -79,6 +77,10 @@ function App( props) {
             <Route exact
                    path="/servers"
                    render={(props) => <Servers {...props} />}
+            />
+            <Route exact
+                   path="/serverDetails/:instance"
+                   render={(props) => <ServerDetails {...props} />}
             />
             <Route exact
                    path="/addonstorages"

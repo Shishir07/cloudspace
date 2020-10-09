@@ -1,20 +1,5 @@
 export default {
 
-
-    getProducts : () => {
-        return request({
-                           url: "/v1/products",
-                           method: 'GET'
-                       });
-    },
-
-    saveToWishList: ({user,product}) => {
-        return request({
-                           url: "/v1/wishList",
-                           method: 'POST',
-                           body: JSON.stringify({ productId: product })
-                       });
-    },
     login : (username,password) => {
         return request({
                            url: "/login",
@@ -27,7 +12,32 @@ export default {
                            url: "/computeEngine/instances",
                            method: 'GET'
                        });
-    }
+    },
+    getServerDetails : (instance) => {
+        return request({
+            url: "/computeEngine/instances/"+instance,
+            method: 'GET'
+        });
+    },
+    stopServers: (instance) => {
+        return request({
+            url: "/computeEngine/instances/"+instance+"/stop",
+            method: 'POST'
+        });
+    },
+    deleteServers: (instance) => {
+        return request({
+            url: "/computeEngine/instances/"+instance,
+            method: 'DELETE'
+        });
+    },
+    startServers: (instance) => {
+        return request({
+            url: "/computeEngine/instances/"+instance+"/start",
+            method: 'POST'
+        });
+    },
+
 
 
 }
